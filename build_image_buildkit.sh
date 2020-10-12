@@ -66,7 +66,7 @@ export DOCKER_CONFIG=$(mktemp -d -t cr-config-XXXXXXXXXX)
 echo "DOCKER CONFIG $DOCKER_CONFIG"
 echo "REGISTRY_URL $REGISTRY_URL"
 touch tempfile
-echo $IBM_CLOUD_API_KEY >> tempfile
+echo $IBM_CLOUD_API_KEY | base64 >> tempfile
 cat tempfile
 ls
 
